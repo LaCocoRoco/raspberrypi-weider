@@ -1,0 +1,20 @@
+.form-control {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.btn-outline-secondary:hover {
+  color: #6c757d;
+  border-color: #6c757d;
+  background-color: transparent;
+}
+
+.btn:focus {
+   outline: none;
+   box-shadow: none;
+}
+
+.loader-spin {
+  animation: keyframe-spin 2s linear infinite;
+}

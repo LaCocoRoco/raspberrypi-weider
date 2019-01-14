@@ -1,0 +1,27 @@
+{
+  "name": "weider",
+  "version": "1.0.0",
+  "author": "deiring andreas",
+  "description": "weider",
+  "main": "ecosystem.config.js",
+  "license": "ISC",
+  "repository": {
+    "type": "mercurial",
+    "url": "bitbucket.org/lacocoroco/weider/"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.5.0",
+    "bootstrap": "^4.1.3",
+    "cookie-parser": "~1.4.3",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "jquery": "^3.3.1",
+    "loglevel": "^1.6.1",
+    "morgan": "^1.9.1",
+    "node-pre-gyp": "^0.11.0",
+    "passport": "^0.4.0",
+    "popper.js": "^1.14.4",
+    "serialport": "^7.0.2",
+    "sqlite3": "^4.0.3"
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <title>Weider</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/weider.css">
+  </head>
+
+  <body>
+
+    <div class="pt-sm-5 container">
+      <div class="pt-0 row jumbotron">
+
+        <div class="col-xl-4 col-lg-6 col-md-12">
+          <div class="pt-3 text-center"><h1>CODE</h1></div>
+          <% for (let code of protocol.code) { %>
+            <div class="<%= code.display ? 'd-block' : 'd-none'%>">
+              <div class="d-flex pt-2" name="header" id="<%= code.id %>">
+                <% if (code.io !== undefined) { %>
+                  <div class="input-group-text" name="transmit"><div class="fas fa-database"></div></div>
+                  <div class="ml-1 w-100 form-control bg-transparent"><%= code.name %></div>
+                  <button class="ml-1 btn btn-outline-secondary" name="sub" type="button" onclick="setProtocolCode(this)"><div class="fas fa-minus"></div></button>
+                  <div class="ml-1 w-25 form-control bg-transparent text-center" name="number"><%= code.value %></div>
+                  <button class="ml-1 btn btn-outline-secondary" name="add" type="button" onclick="setProtocolCode(this)"><div class="fas fa-plus"></div></button>
+                <% } else if (code.unit !== undefined) { %>
+                  <div class="ml-1 w-100 form-control bg-transparent"><%= code.name %></div>
+                  <div class="ml-1 w-25 form-control bg-transparent text-center" name="number"><%= code.value %></div>
+                  <div class="ml-1 input-group-text"><%= code.unit %></div>
+                <% } else { %>
+                  <div class="ml-1 w-100 form-control bg-transparent"><%= code.name %></div>
+                  <div class="ml-1 w-25 form-control bg-transparent text-center" name="number"><%= code.value %></div>
+                <% } %>
+              </div>
+            </div>
+          <% } %>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-12">
+          <div class="pt-3 text-center"><h1>MEASUREMENT</h1></div>
+          <% for (let measurement of protocol.measurement) { %>
+            <div class="<%= measurement.display ? 'd-block' : 'd-none'%>">
+              <div class="d-flex pt-2" name="header" id="<%= measurement.id %>">
+                <div class="w-100 form-control bg-transparent"><%= measurement.name %></div>
+                  <% if (measurement.unit !== undefined) { %>
+                    <div class="ml-1 w-25 form-control bg-transparent text-center" name="number"><%= measurement.value %></div>
+                    <div class="ml-1 input-group-text"><%= measurement.unit %></div>
+                  <% } else { %>
+                    <div class="ml-1 w-25 form-control bg-transparent text-center" name="number"><%= measurement.value %></div>
+                  <% } %>
+              </div>
+            </div>
+          <% } %>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-12">
+          <div class="pt-3 text-center"><h1>OUTPUT</h1></div>
+          <% for (let output of protocol.output) { %>
+            <div class="<%= output.display ? 'd-block' : 'd-none'%>">
+              <div class="d-flex pt-2" name="header" id="<%= output.id %>">
+                <div class="w-100 form-control bg-transparent"><%= output.name %></div>
+                <div name="output" class="ml-1 input-group-text <%= output.active ? ' bg-success' : '' %>"><div class="fas fa-cog"></div></div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-12">
+          <div class="pt-3 text-center"><h1>INPUT</h1></div>
+          <% for (let input of protocol.input) { %>
+            <div class="<%= input.display ? 'd-block' : 'd-none'%>">
+              <div class="d-flex pt-2" name="header" id="<%= input.id %>">
+                <div class="w-100 form-control bg-transparent"><%= input.name %></div>
+                <div name="input" class="ml-1 input-group-text <%= input.active ? ' bg-success' : '' %>"><div class="fas fa-cog"></div></div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-12">
+          <div class="pt-3 text-center"><h1>FAILURE</h1></div>
+          <% for (let failure of protocol.failure) { %>
+            <div class="<%= failure.display ? 'd-block' : 'd-none'%>">
+              <div class="d-flex pt-2" name="header" id="<%= failure.id %>">
+                <div class="w-100 form-control bg-transparent"><%= failure.name %></div>
+                <div name="failure" class="ml-1 input-group-text <%= failure.active ? ' bg-success' : '' %>"><div class="fas fa-cog"></div></div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-12">
+          <div class="pt-3 text-center"><h1>ERROR</h1></div>
+          <% for (let error of protocol.error) { %>
+            <% for (let byte of error.byte) { %>
+              <div class="<%= byte.display ? 'd-block' : 'd-none'%>">
+                <div class="d-flex pt-2" name="header" id="<%= byte.id %>">
+                  <div class="w-100 form-control bg-transparent"><%= byte.name %></div>
+                  <div name="error" class="ml-1 input-group-text <%= byte.active ? ' bg-success' : '' %>"><div class="fas fa-cog"></div></div>
+                </div>
+              </div>
+            <% } %>
+          <% } %>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+    <script src="/javascripts/weider.js"></script>
+  </body>
+</html>
