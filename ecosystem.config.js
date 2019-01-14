@@ -7,7 +7,6 @@ module.exports = {
     error_file          : 'log/error.log',
     log_date_format     : "YYYY-MM-DD HH:mm Z",
     watch               : ['config', 'controllers', 'public', 'routes', 'views'],
-    node_args           : ['--inspect=9999'],
     max_memory_restart  : '1G',
     max_restarts        : 5,
     min_uptime          : 5000,
