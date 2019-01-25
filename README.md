@@ -1,1 +1,2 @@
 # Weider
+(docs/weider.png)
