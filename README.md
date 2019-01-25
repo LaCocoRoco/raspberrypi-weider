@@ -1,2 +1,2 @@
 # Weider
-![Weider]((docs/weider.png)
+![Weider](docs/weider.png)
