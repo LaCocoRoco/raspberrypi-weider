@@ -6,8 +6,8 @@
   "main": "ecosystem.config.js",
   "license": "ISC",
   "repository": {
-    "type": "mercurial",
-    "url": "bitbucket.org/lacocoroco/weider/"
+    "type": "github",
+    "url": "github.com/LaCocoRoco/Weider"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.5.0",
@@ -21,7 +21,6 @@
     "node-pre-gyp": "^0.11.0",
     "passport": "^0.4.0",
     "popper.js": "^1.14.4",
-    "serialport": "^7.0.2",
-    "sqlite3": "^4.0.3"
+    "serialport": "^7.0.2"
   }
 }
