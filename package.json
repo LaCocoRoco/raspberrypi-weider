@@ -7,20 +7,42 @@
   "license": "ISC",
   "repository": {
     "type": "github",
-    "url": "github.com/LaCocoRoco/Weider"
+    "url": "https://github.com/LaCocoRoco/Weider"
+  },
+  "scripts": {
+    "receive": "pm2 start --only receiver --env dev",
+    "dev": "pm2 start --only weider --env dev",
+    "start": "pm2 start --only weider --env prod",
+    "stop": "pm2 stop all",
+    "delete": "pm2 delete all",
+    "status": "pm2 status all",
+    "startup": "pm2 startup",
+    "unstartup": "pm2 unstartup",
+    "save": "pm2 save",
+    "list": "pm2 list",
+    "audit": "better-npm-audit audit",
+    "ncu": "ncu"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.5.0",
-    "bootstrap": "^4.1.3",
-    "cookie-parser": "~1.4.3",
-    "ejs": "~2.5.7",
-    "express": "~4.16.0",
-    "jquery": "^3.5.0",
-    "loglevel": "^1.6.1",
-    "morgan": "^1.9.1",
-    "node-pre-gyp": "^0.11.0",
-    "passport": "^0.4.0",
-    "popper.js": "^1.14.4",
-    "serialport": "^7.0.2"
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "bootstrap": "^5.3.3",
+    "cookie-parser": "~1.4.7",
+    "ejs": "~3.1.10",
+    "express": "~4.21.2",
+    "jquery": "^3.7.1",
+    "loglevel": "^1.9.2",
+    "morgan": "^1.10.0",
+    "node-pre-gyp": "^0.17.0",
+    "passport": "^0.7.0",
+    "pm2": "^5.4.3",
+    "popper.js": "^1.16.1",
+    "serialport": "^13.0.0"
+  },
+  "devDependencies": {
+    "better-npm-audit": "^3.11.0",
+    "npm-check-updates": "^17.1.15"
+  },
+  "overrides": {
+    "tar": "^6.2.1"
   }
 }
