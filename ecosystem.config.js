@@ -26,7 +26,7 @@ module.exports = {
       env_prod: {
         PORT: 8080,
         NODE_ENV: 'production',
-        LOG_LEVEL: 4,
+        LOG_LEVEL: 5,
       },
     },
     {
@@ -48,10 +48,6 @@ module.exports = {
       env_deb: {
         NODE_ENV: 'debug',
         LOG_LEVEL: 2,
-      },
-      env_prod: {
-        NODE_ENV: 'production',
-        LOG_LEVEL: 4,
       },
     },
   ],
