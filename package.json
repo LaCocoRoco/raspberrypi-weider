@@ -18,23 +18,7 @@
     "startup": "pm2 startup",
     "unstartup": "pm2 unstartup",
     "save": "pm2 save",
-    "list": "pm2 list",
-    "audit": "better-npm-audit audit",
-    "ncu": "ncu"
-    "url": "https://github.com/LaCocoRoco/Weider"
-  },
-  "scripts": {
-    "start": "pm2 start --only weider --env prod",
-    "dev": "pm2 start --env dev",
-    "stop": "pm2 stop all",
-    "delete": "pm2 delete all",
-    "status": "pm2 status all",
-    "startup": "pm2 startup",
-    "unstartup": "pm2 unstartup",
-    "save": "pm2 save",
-    "list": "pm2 list",
-    "audit": "better-npm-audit audit",
-    "ncu": "ncu"
+    "list": "pm2 list"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.5.0",
